@@ -3,7 +3,7 @@ import './App.css';
 const App = () => {
   const [nombre, setNombre] = useState('');
   const [telefono, setTelefono] = useState('');
-  const [opciones, setOpciones] = useState('');
+  const [opciones, setOpciones] = useState('Empresa');
   const [mostrarInfo, setMostrarInfo] = useState(false);
   const [listaNombres, setListaNombres] = useState([]);
   const handleNombreChange = (event) => {
