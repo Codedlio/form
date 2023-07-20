@@ -1,25 +1,29 @@
 import React, { useState } from "react";
-import "./ContactForm.css"; 
+import "./ContactForm.css";
+
 const ContactForm = ({ onAddContact }) => {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [description, setDescription] = useState("");
-  const [type, setType] = useState("person");
+  const initialContact = {
+    name: "",
+    phone: "",
+    description: "",
+    type: "person",
+  };
+
+  const [contact, setContact] = useState(initialContact);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setContact((prevContact) => ({ ...prevContact, [name]: value }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newContact = {
       id: Date.now(),
-      name,
-      phone,
-      description,
-      type,
+      ...contact,
     };
     onAddContact(newContact);
-    setName("");
-    setPhone("");
-    setDescription("");
-    setType("person");
+    setContact(initialContact);
   };
 
   return (
@@ -29,8 +33,9 @@ const ContactForm = ({ onAddContact }) => {
         <input
           type="text"
           id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          name="name"
+          value={contact.name}
+          onChange={handleChange}
           className="form-control"
           required
         />
@@ -40,8 +45,9 @@ const ContactForm = ({ onAddContact }) => {
         <input
           type="text"
           id="phone"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
+          name="phone"
+          value={contact.phone}
+          onChange={handleChange}
           className="form-control"
           required
         />
@@ -50,15 +56,22 @@ const ContactForm = ({ onAddContact }) => {
         <label htmlFor="description">Description:</label>
         <textarea
           id="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
+          name="description"
+          value={contact.description}
+          onChange={handleChange}
           className="form-control"
           required
         />
       </div>
       <div className="form-group">
         <label htmlFor="type">Type:</label>
-        <select id="type" value={type} onChange={(e) => setType(e.target.value)} className="form-control">
+        <select
+          id="type"
+          name="type"
+          value={contact.type}
+          onChange={handleChange}
+          className="form-control"
+        >
           <option value="person">Person</option>
           <option value="company">Company</option>
         </select>
