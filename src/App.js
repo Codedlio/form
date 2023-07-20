@@ -37,7 +37,7 @@ const App = () => {
 
   const handleDeleteName = (index) => {
     
-    const updatedList = listaNombres.filter((_, i) => i !== index);
+    const updatedList = listaNombres.filter((element, i) => i !== index);
     setListaNombres(updatedList);
   };
 
