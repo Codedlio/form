@@ -43,7 +43,7 @@ const App = () => {
 
  return (
     <div>
-      <h1>Formulario React</h1>
+      <h1>Formulario </h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Nombre:</label>
@@ -56,8 +56,8 @@ const App = () => {
         <div>
           <label>Opciones:</label>
           <select value={opciones} onChange={handleOpcionesChange}>
-            <option value="opcion1">Empresa</option>
-            <option value="opcion2">Persona</option>
+            <option value="Empresa">Empresa</option>
+            <option value="Persona">Persona</option>
           </select>
         </div>
         <button type="submit">Enviar</button>
