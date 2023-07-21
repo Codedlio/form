@@ -4,13 +4,15 @@ const ContactItem = ({ contact, onDeleteContact }) => {
   const { id, name, phone, description, type } = contact;
 
   return (
-    <li className="contact-item">
-      <h2 className="contact-name">{name}</h2>
-      <p className="contact-info">Phone: {phone}</p>
-      <p className="contact-info">Description: {description}</p>
-      <p className="contact-info">Type: {type === 'person' ? 'Person' : 'Company'}</p>
-      <button onClick={() => onDeleteContact(id)} className="delete-button">Delete</button>
-    </li>
+    <div className="card mb-6">
+      <div className="card-body">
+        <h5 className="card-title">{name}</h5>
+        <p className="card-text">Phone: {phone}</p>
+        <p className="card-text">Description: {description}</p>
+        <p className="card-text">Type: {type === 'person' ? 'Person' : 'Company'}</p>
+        <button onClick={() => onDeleteContact(id)} className="btn btn-outline-primary">Delete</button>
+      </div>
+    </div>
   );
 };
 

@@ -24,6 +24,7 @@ const ContactForm = ({ onAddContact }) => {
     };
     onAddContact(newContact);
     setContact(initialContact);
+    alert("Contact has been added")
   };
 
   return (
@@ -76,7 +77,7 @@ const ContactForm = ({ onAddContact }) => {
           <option value="company">Company</option>
         </select>
       </div>
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className="btn btn-outline-primary">
         Add Contact
       </button>
     </form>

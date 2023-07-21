@@ -43,10 +43,10 @@ const ContactManager = () => {
 
   return (
     <div>
-      <h1>Contact Manager</h1>
+      <h1>Form</h1>
       <ContactForm onAddContact={addContact} />
-      <div className="buttons">
-        <button className="btn btn-primary" onClick={handleSort}>
+      <div className="btn-group" role="group">
+        <button className="btn btn-primary " onClick={handleSort}>
           {sortBy === 'asc' ? 'Sort A-Z' : 'Sort Z-A'}
         </button>
         <button className="btn btn-primary" onClick={() => handleFilter('all')}>

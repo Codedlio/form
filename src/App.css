@@ -1,11 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #3f77bb;
+}
+
 .app {
   text-align: center;
   max-width: 600px;
   margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  
 }
 
 form {
   margin-bottom: 20px;
+  border-radius: 5px;
+  background: transparent;
 }
 
 .contact-list {
@@ -18,6 +30,7 @@ li {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
+
 }
 
 button {
